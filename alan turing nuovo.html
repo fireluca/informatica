@@ -4,19 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Stampare i numeri primi tra 1 e 10000</title>
+
 </head>
 <body>
+    <h1>Numeri primi</h1>
+    <button id="bott" onclick="numeri()">Genera i numeri primi!</button>
     <script>
-        for (var n = 1; n <= 1000; n++) {
-    if ((n%10)==0) {
-   document.write('<span style="color:red" >'+ n + " " + '</span>'); 
-   } else {
-    document.write('<span>'+ n + " " + '</span>' + " " ); 
-   }
-  };
-  
+
+    let risultato=0;
+    let finale=0;
+
+        function numeri(){
+        let volte=0;  
+        let b=1;
+        let c=100;
+        for(let t=0;t<100;t++){
+           for(let i=b;i<c+1;i++){
+            if(start(i)){
+                document.write("<span style=color:red>"+i+" "+"</span>");
+                volte=volte+1;
+            }
+            else{
+                document.write("<span>"+i+" "+"</span>");
+            }
+            }
+            document.write("<p>Sono stati trovati: "+volte+" numeri, questo dimostra che la juve è una merda"+"</p>");
+            b=b+100;
+            c=c+100;
+            volte=0;
+        }
+           
+           
+        }
+        function start(n){
+        let Out=true;
+            for(let fattore=2;(fattore<=n/2 && Out);fattore++){
+                if((n%fattore)==0){
+                    Out=false;
+            }
+            if(n==1){
+                Out=false;
+            }
+            }
+            return Out;
+        }
     </script>
-    
-</body>
-</html>
